@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'bai1/home_classroom_screen.dart';
-import 'bai2/welcome_charlie_screen.dart';
+import 'bai2/bai2_wrapper_screen.dart';
 import 'bai3/timer_counter_screen.dart';
 import 'bai4/login_register_screen.dart';
 import 'bai5/bmi_feedback_screen.dart';
@@ -52,7 +52,7 @@ class MainScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const WelcomeCharlieScreen(),
+                      builder: (context) => const Bai2WrapperScreen(),
                     ),
                   );
                 },
@@ -165,7 +165,7 @@ class MainScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const WelcomeCharlieScreen(),
+                      builder: (context) => const Bai2WrapperScreen(),
                     ),
                   );
                 },

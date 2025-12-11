@@ -160,6 +160,51 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
   }
 
   // ---------------------------------------------------------------------------
+  // INPUT DECORATION
+  // ---------------------------------------------------------------------------
+  InputDecoration _buildInputDecoration({
+    required String label,
+    required IconData prefixIcon,
+    Widget? suffixIcon,
+    bool hasError = false,
+  }) {
+    const errorColor = Color(0xFFE57373);
+    return InputDecoration(
+      labelText: label,
+      labelStyle: TextStyle(
+        color: hasError ? errorColor : Colors.grey[600],
+        fontSize: 14,
+      ),
+      prefixIcon: Icon(
+        prefixIcon,
+        color: hasError ? errorColor : Colors.grey[600],
+        size: 22,
+      ),
+      suffixIcon: suffixIcon,
+      filled: true,
+      fillColor: Colors.white,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(color: Colors.grey.shade300),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(
+          color: hasError ? errorColor : Colors.grey.shade300,
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(
+          color: hasError ? errorColor : const Color(0xFF4CAF50),
+          width: 2,
+        ),
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------------
   // UI BUILD
   // ---------------------------------------------------------------------------
 
@@ -183,56 +228,35 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
   }
 
   // --- Login View ---
-  // --- Login View ---
   Widget _buildLoginView() {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 20),
-          const Text(
-            "Đăng nhập",
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            "Chào mừng trở lại, chúng tôi rất nhớ bạn",
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey[600],
-              fontWeight: FontWeight.w500,
-            ),
-          ),
           const SizedBox(height: 40),
 
-          // Username
-          const Text(
-            "Tên đăng nhập",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 8),
+          // Username Field
           TextField(
             controller: _usernameController,
-            decoration: _inputDecoration("Nhập tên đăng nhập"),
+            decoration: _buildInputDecoration(
+              label: 'Tên người dùng',
+              prefixIcon: Iconsax.user,
+            ),
           ),
           const SizedBox(height: 20),
 
-          // Password
-          const Text("Mật khẩu", style: TextStyle(fontWeight: FontWeight.bold)),
-          const SizedBox(height: 8),
+          // Password Field
           TextField(
             controller: _passwordController,
             obscureText: _obscurePassword,
-            decoration: _inputDecoration("Nhập mật khẩu").copyWith(
+            decoration: _buildInputDecoration(
+              label: 'Mật khẩu',
+              prefixIcon: Iconsax.lock,
               suffixIcon: IconButton(
                 icon: Icon(
-                  _obscurePassword ? Iconsax.eye_slash : Iconsax.eye,
-                  color: Colors.grey,
+                  _obscurePassword ? Iconsax.eye : Iconsax.eye_slash,
+                  color: const Color(0xFFE57373),
                   size: 20,
                 ),
                 onPressed: () =>
@@ -241,56 +265,18 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
             ),
           ),
 
-          const SizedBox(height: 16),
-          Row(
-            children: [
-              SizedBox(
-                height: 24,
-                width: 24,
-                child: Checkbox(
-                  value: true, // Dummy value for demonstration
-                  activeColor: kPrimaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  onChanged: (val) {},
-                ),
-              ),
-              const SizedBox(width: 8),
-              const Text(
-                "Ghi nhớ đăng nhập",
-                style: TextStyle(fontWeight: FontWeight.w500),
-              ),
-              const Spacer(),
-              GestureDetector(
-                onTap: () {},
-                child: const Text(
-                  "Quên mật khẩu?",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ],
-          ),
-
           const SizedBox(height: 30),
 
           // Login Button
           SizedBox(
             width: double.infinity,
-            height: 56,
-            child: ElevatedButton(
+            height: 50,
+            child: ElevatedButton.icon(
               onPressed: _isLoading ? null : _login,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                elevation: 0,
-              ),
-              child: _isLoading
+              icon: _isLoading
+                  ? const SizedBox.shrink()
+                  : const Icon(Iconsax.login, color: Colors.white, size: 20),
+              label: _isLoading
                   ? const SizedBox(
                       height: 20,
                       width: 20,
@@ -300,19 +286,24 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
                       ),
                     )
                   : const Text(
-                      "Đăng nhập",
+                      'Đăng nhập',
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF3D5A80),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                elevation: 0,
+              ),
             ),
           ),
 
-          const SizedBox(height: 30),
-
-          const SizedBox(height: 24),
+          const SizedBox(height: 40),
 
           // Demo Hint
           Center(
@@ -323,7 +314,7 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: const Text(
-                "Demo: emilys / emilyspass",
+                'Demo: emilys / emilyspass',
                 style: TextStyle(color: Colors.grey, fontSize: 12),
               ),
             ),
@@ -334,21 +325,21 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Don't have an account? ",
+                'Chưa có tài khoản? ',
                 style: TextStyle(color: Colors.grey[600]),
               ),
               GestureDetector(
                 onTap: () {
                   _showSnackBar(
-                    "Chức năng đăng ký chưa được thực hiện",
+                    'Chức năng đăng ký chưa được thực hiện',
                     Colors.black54,
                   );
                 },
                 child: const Text(
-                  "Sign Up",
+                  'Đăng ký',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Color(0xFF3D5A80),
                     decoration: TextDecoration.underline,
                   ),
                 ),
@@ -577,30 +568,4 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
       ),
     );
   }
-}
-
-// -----------------------------------------------------------------------------
-// HELPER WIDGETS (Shared styling)
-// -----------------------------------------------------------------------------
-
-InputDecoration _inputDecoration(String hint) {
-  return InputDecoration(
-    hintText: hint,
-    hintStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
-    filled: true,
-    fillColor: Colors.white,
-    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide(color: Colors.grey.shade300),
-    ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide(color: Colors.grey.shade300),
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: const BorderSide(color: kPrimaryColor, width: 1.2),
-    ),
-  );
 }
