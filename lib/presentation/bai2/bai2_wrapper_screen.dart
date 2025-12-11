@@ -17,7 +17,7 @@ class _Bai2WrapperScreenState extends State<Bai2WrapperScreen> {
       appBar: AppBar(
         backgroundColor: _selectedIndex == 0
             ? Colors.white
-            : const Color(0xFF003B95),
+            : const Color(0xFF1d293d),
         elevation: 0,
         leading: IconButton(
           icon: Icon(
@@ -87,7 +87,7 @@ class _Bai2WrapperScreenState extends State<Bai2WrapperScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
           color: isSelected
-              ? (_selectedIndex == 0 ? Colors.white : const Color(0xFF003B95))
+              ? (_selectedIndex == 0 ? Colors.white : const Color(0xFF1d293d))
               : Colors.transparent,
           borderRadius: BorderRadius.circular(20),
           boxShadow: isSelected
@@ -391,7 +391,7 @@ class _HomeWorkContent extends StatelessWidget {
 
   Widget _buildSearchHeader() {
     return Container(
-      color: const Color(0xFF003B95),
+      color: const Color(0xFF1d293d),
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -470,7 +470,7 @@ class _HomeWorkContent extends StatelessWidget {
               width: 8,
               height: 8,
               decoration: const BoxDecoration(
-                color: Color(0xFF003B95),
+                color: Color(0xFF1d293d),
                 shape: BoxShape.circle,
               ),
             ),
@@ -575,7 +575,7 @@ class _HomeWorkContent extends StatelessWidget {
                               style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Color(0xFF003B95),
+                                color: Color(0xFF1d293d),
                               ),
                             ),
                             if (rating > 0)
@@ -609,7 +609,7 @@ class _HomeWorkContent extends StatelessWidget {
                             vertical: 3,
                           ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF003B95),
+                            color: const Color(0xFF1d293d),
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(

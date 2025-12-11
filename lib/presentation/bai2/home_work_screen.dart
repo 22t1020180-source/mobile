@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-const Color kPrimaryBlue = Color(0xFF003B95);
+const Color kPrimaryBlue = Color(0xFF1d293d);
 
 class HomeWorkScreen extends StatelessWidget {
   const HomeWorkScreen({super.key});

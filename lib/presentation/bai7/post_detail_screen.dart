@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'new_api_screen.dart'; // Import to access the Post model
 
-const Color kPrimaryColor = Color(0xFFec003f);
+const Color kPrimaryColor = Color(0xFF1d293d);
 
 class PostDetailScreen extends StatelessWidget {
   final Post post;

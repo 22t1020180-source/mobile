@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:iconsax/iconsax.dart';
 import 'post_detail_screen.dart';
 
-const Color kPrimaryColor = Color(0xFFec003f);
+const Color kPrimaryColor = Color(0xFF1d293d);
 
 // -----------------------------------------------------------------------------
 // MODEL

@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-const Color kPrimaryColor = Color(0xFFec003f);
+const Color kPrimaryColor = Color(0xFF1d293d);
 
 class TimerCounterScreen extends StatefulWidget {
   const TimerCounterScreen({super.key});

@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'dart:ui';
 import 'package:iconsax/iconsax.dart';
 
-const Color kPrimaryColor = Color(0xFFec003f);
+const Color kPrimaryColor = Color(0xFF1d293d);
 
 // -----------------------------------------------------------------------------
 // MODEL
@@ -294,7 +294,7 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
                       ),
                     ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF3D5A80),
+                backgroundColor: const Color(0xFF1d293d),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
@@ -339,7 +339,7 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
                   'Đăng ký',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF3D5A80),
+                    color: Color(0xFF1d293d),
                     decoration: TextDecoration.underline,
                   ),
                 ),
@@ -366,7 +366,7 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Color(0xFFec003f), Color(0xFFfc6767)],
+                    colors: [Color(0xFF1d293d), Color(0xFF3d5a80)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -474,8 +474,8 @@ class _LoginProfileScreenState extends State<LoginProfileScreen> {
                       child: _buildActionButton(
                         label: "Đăng xuất",
                         icon: Iconsax.logout,
-                        color: const Color(0xFFFFF0F3), // Light Red/Pink
-                        iconColor: const Color(0xFFec003f), // Primary Color
+                        color: const Color(0xFFE8EEF5), // Light Blue
+                        iconColor: const Color(0xFF1d293d), // Primary Color
                         onTap: _logout,
                       ),
                     ),

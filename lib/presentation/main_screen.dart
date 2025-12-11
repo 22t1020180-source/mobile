@@ -272,7 +272,7 @@ class MainScreen extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
               border: Border(
-                left: BorderSide(color: Color(0xFFec003f), width: 4),
+                left: BorderSide(color: Color(0xFF1d293d), width: 4),
               ),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),

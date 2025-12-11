@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-const Color kPrimaryBlue = Color(0xFF3D5A80);
+const Color kPrimaryBlue = Color(0xFF1d293d);
 const Color kErrorColor = Color(0xFFE57373);
 
 class RegisterForm extends StatefulWidget {

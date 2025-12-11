@@ -4,7 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'dart:async';
 import 'ecommerce_detail_screen.dart';
 
-const Color kPrimaryColor = Color(0xFFec003f);
+const Color kPrimaryColor = Color(0xFF1d293d);
 
 // -----------------------------------------------------------------------------
 // MODEL

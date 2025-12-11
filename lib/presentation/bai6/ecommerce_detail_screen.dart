@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'ecommerce_screen.dart'; // Import to access Product model
 
-const Color kPrimaryColor = Color(0xFFec003f);
+const Color kPrimaryColor = Color(0xFF1d293d);
 
 class EcommerceDetailScreen extends StatelessWidget {
   final Product product;

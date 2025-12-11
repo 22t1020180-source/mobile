@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color kPrimaryColor = Color(0xFFec003f);
+const Color kPrimaryColor = Color(0xFF1d293d);
 
 InputDecoration inputDecoration(String hint) {
   return InputDecoration(
