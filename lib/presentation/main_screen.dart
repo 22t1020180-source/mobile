@@ -1,0 +1,311 @@
+import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'bai1/home_classroom_screen.dart';
+import 'bai2/welcome_charlie_screen.dart';
+import 'bai3/timer_counter_screen.dart';
+import 'bai4/login_register_screen.dart';
+import 'bai5/bmi_feedback_screen.dart';
+import 'bai6/ecommerce_screen.dart';
+import 'bai7/new_api_screen.dart';
+import 'bai8/login_profile_screen.dart';
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: Icon(Iconsax.menu_1),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              SizedBox(height: 80),
+              _buildExerciseCard(
+                title: 'Bài tập 1: Home Classroom',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeClassroomScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 2: Welcome Charlie',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const WelcomeCharlieScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 3: Bộ đếm thời gian & Đếm số',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TimerCounterScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 4: Form Login và Register',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginRegisterScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 5: Bài tập BMI & Gửi phản hồi',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BmiFeedbackScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 6: Thương mại điện tử - WebAPI',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const EcommerceScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 7: Tin Tức - WebAPI',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NewApiScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 8: Login & Profile',
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginProfileScreen(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.grey.withOpacity(0.015),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              _buildExerciseCard(
+                title: 'Bài tập 1: Home Classroom',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeClassroomScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 2: Welcome Charlie',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const WelcomeCharlieScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 3: Bộ đếm thời gian & Đếm số',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TimerCounterScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 4: Form Login và Register',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginRegisterScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 5: Bài tập BMI & Gửi phản hồi',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BmiFeedbackScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 6: Thương mại điện tử - WebAPI',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const EcommerceScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 7: Tin Tức - WebAPI',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NewApiScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 12),
+              _buildExerciseCard(
+                title: 'Bài tập 8: Login & Profile',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginProfileScreen(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildExerciseCard({
+    required String title,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.04),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Container(
+            decoration: const BoxDecoration(
+              border: Border(
+                left: BorderSide(color: Color(0xFFec003f), width: 4),
+              ),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                      height: 1.3,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.08),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Iconsax.arrow_right_3,
+                    color: Colors.grey,
+                    size: 16,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
